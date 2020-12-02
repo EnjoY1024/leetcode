@@ -10,43 +10,43 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        dic = {}
-        min_val = ""
-        # print(strs)
-        for s in strs:
-            dic[s] = len(s)
-        # print(dic)
-        min_long = min(dic.values())
-        # print(min_long)
-        for k, v in dic.items():
-            if v == min_long:
-                break
-        min_val = k
+        if len(strs) == 0:
+            return ''
 
-        flag = True
-        temp = min_val
-        for s in strs:
-            if temp not in s:
-                flag = False
-                break
-            else:
-                continue
-        if flag == True:
-            return temp
-        else:
-            i = -1
-            for ss in strs:
-                if min_val[:i] in ss:
-                    continue
+        if len(strs) == 1:
+            return strs[0]
+
+        c, minist = min([(len(s), s) for s in strs])
+        #print(c,minist)
+        if c == 0:
+            return ''
+        flag = False
+        if c == 1:
+            for s in strs:
+                if s[0] != minist[0]:
+                    flag = False
+                    return ''
                 else:
-                    i -= 1
-                    if i <= -len(min_val):
-                        return ''
-                    else:
-                        continue
-                return min_val[:i]
+                    flag = True
+                    continue
 
+            if flag == True:
+                return minist[0]
+
+        flag2 = False
+        for i in range(c):
+            ind = minist[i]
+        #print(ind)
+            for s in strs:
+                if s[i] != ind:
+                    return s[0:i]
+                else:
+                    flag2 = True
+                    continue
+
+        if flag2 == True:
+            return minist
 
 s = Solution()
-print(s.longestCommonPrefix(["flower", "flow", "flight"]))
+print(s.longestCommonPrefix(["flower","flow","flight"]))
 
