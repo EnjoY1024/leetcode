@@ -9,3 +9,5 @@ class Solution(object):
         :type n: int
         :rtype: str
         """
+        if n<0 or n>30:
+            return 
