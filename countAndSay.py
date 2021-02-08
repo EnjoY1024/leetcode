@@ -12,3 +12,4 @@ class Solution(object):
         if n<0 or n>30:
             return
         dddd
+aaa
