@@ -12,6 +12,11 @@ class Solution(object):
         :rtype: int
         """
 
-        flag = False
+        h = len(haystack)
+        n = len(needle)
 
-        
+        for start in range(0,h-n+1):
+            if haystack[start:start+n]==needle:
+                return start
+        return -1
+
