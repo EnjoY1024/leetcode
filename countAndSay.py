@@ -11,5 +11,8 @@ class Solution(object):
         """
         if n<0 or n>30:
             return
-        dddd
-testuuuu
+        if n = 1:
+            return 11
+        else:
+            x = countAndSay(n-1)
+        
