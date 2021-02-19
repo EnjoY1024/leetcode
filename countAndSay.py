@@ -20,10 +20,10 @@ class Solution(object):
             for i in range(len(key)):
                 if key[j] == key[i]:
                     num +=1
-                elif key[i] == '@':#如果访问到最后一个可能和前面的数字相同，为了终止，但是好像没用
-                    r += str(num)
-                    r += str(key[i-1])
-                    break
+                # elif key[i] == '@':#如果访问到最后一个可能和前面的数字相同，为了终止，但是好像没用
+                #     r += str(num)
+                #     r += str(key[i-1])
+                #     break
                 else:
                     r += str(num)
                     #print(key[i-1])
