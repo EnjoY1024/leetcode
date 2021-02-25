@@ -8,6 +8,8 @@ __author__ = "hanruobing"
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+#指针的写不出来
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
