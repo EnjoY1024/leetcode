@@ -18,14 +18,15 @@ class Solution(object):
 
         r = [[1] * i for i in range(1, numRows + 1)]
 
-        for i in range(3,numRows+1):
-            for j in range(numRows):
-                if j == 0 or j==numRows-1:
+        for i in range(2,numRows):
+            for j in range(0,i+1):
+                if j==0 or j==i:
                     r[i][j] = 1
                 else:
-                    r[i][j] = r[i-1][j]+r[i-1][j+1]
+                    #print(r[i-1][j-1]+r[i-1][j])
+                    r[i][j] = r[i-1][j-1]+r[i-1][j]
         return r
-#数组越界，不知道哪，需调试
+
     
 s = Solution()
-print(s.generate(3))
+print(s.generate(4))
