@@ -3,29 +3,23 @@
 # @Time : 2021/2/24 9:37
 __author__ = "hanruobing"
 
-class Solution(object):
-    def climbStairs(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        # if n == 1:
-        #     return 1
-        # if n == 2:
-        #     return 2
-        # while n>2:
-        #     return self.climbStairs(n-1)+self.climbStairs(n-2)
-        
-        #上面超时
-        
-        a = 0
-        b = 0
-        c = 1
-        for i in range(0,n):
-            a = b
-            b = c
-            c = a+b
-        return c
+
+class Solution:
+    # 返回[a,b] 其中ab是出现一次的两个数字
+    def FindNumsAppearOnce(self, array):
+        # write code here
+        dic = {}
+        resp = []
+        for num in array:
+            if num in dic:
+                dic[num] += 1
+            else:
+                dic[num] = 1
+        for k, v in dic.items():
+            if v == 1:
+                resp.append(k)
+
+        return resp
 
 s = Solution()
-print(s.climbStairs(3))
+print(s.FindNumsAppearOnce([1,2,3,3,2,4,4,5]))
