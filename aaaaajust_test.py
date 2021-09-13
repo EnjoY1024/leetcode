@@ -23,3 +23,16 @@ __author__ = 'hanruobing'
 #     return disorder_list
 
 # print(select([2,9,3,8,4,5]))
+
+def quick_sort(arr):
+    if len(arr)<2:
+        return arr
+    else:
+        pivot = arr[0]#假设是排序后中间那个数
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
+
+print('quick_sort：',quick_sort([2,9,3,8,4,5]))
+
+
